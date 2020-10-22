@@ -1,3 +1,134 @@
-body {
-  background-color: yellow;
+:root {
+  --yellow: #ffc600;
+
+  --size1: 4px;
+  --size2: 8px;
+  --size3: 12px;
+  --size4: 16px;
+  --size5: 24px;
+  --size6: 32px;
+  --size7: 48px;
+  --size8: 64px;
+  --size9: 96px;
+  --size10: 128px;
+  --size11: 192px;
+  --size12: 256px;
+  --size13: 384px;
+  --size14: 512px;
+  --size15: 640px;
+  --size16: 768px;
+
+  --white: #FFFBF8;
+  --black1: #272727;
+  --black2: #2F1D0F;
+  --cream: #F7F0EA;
+  --orange: #FA875B;
+  --brown1: #F0D2B0;
+  --brown2: #ECC091;
+  --brown3: #CA9D73;
+  --grey1: #64574A;
+  --grey2: #958B81;
+  --background1: #F9F2EA;
+  --background2: #EEFCFF;
+  --color1: #89431E;
+  --color2: #00BCF1;
+  --color3: #B3ECFC;
 }
+
+html, body, #root {
+  // height: 100%;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+  Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  // font-weight: 900;
+  // font-size: 10px;
+  color: var(--black1);
+  // text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
+  body {
+    color: var(--black1);
+    // min-height: calc(100vh - 100px); // this comes from wes bos' code in css-grid course and I don't recall what is it.
+    margin: 0px;
+    /* background: white; */
+    letter-spacing: -1px;
+
+    h1, h2, h3, h4, h5, h6 {
+      margin: 0 0 0 0;
+    }
+
+    #root {
+      // min-height: 100%;
+      
+      .home {
+        background: var(--background2);
+        // min-height: 100%;
+        display: grid;
+        grid-template-rows: 1fr auto;
+        justify-content: center;
+        align-text: center;
+
+        h1 {
+          color: var(--orange);
+          text-align: center;
+          height: var(--size8);
+          line-height: var(--size8);
+        }
+
+        .list {
+          display: grid;
+          // background: rgba(0, 0, 0, 0.1);
+          // min-height: 100%;
+          // grid-gap: var(--size1);
+          width: var(--size13);
+          // max-width: var(--size13);
+          // grid-template-rows: var(--size10);
+          grid-auto-rows: calc(var(--size8) + var(--size1));
+          // grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+          // background: tomato;
+          // justify-items: end;
+          // align-items: center;
+
+          .list-item {
+            display: grid;
+            padding-left: var(--size4);
+            line-height: calc(var(--size8) + var(--size1));
+            font-size: var(--size5);
+            width: 100%;
+            letter-spacing: 1px;
+            // background: #BADA55;
+            // min-height: 50px;
+            border-radius: 10% / 50%;
+            justify-content: left;
+            // border-bottom: 1px solid #F1F3F4;
+
+            &:hover {
+              // background: #E8F0FE;
+              // background: #FDDCD0;
+              background: var(--color3);
+            }
+
+            a {
+              background: none;
+              text-decoration: none;
+              // color: var(--black1);
+              color: var(--color2);
+
+              &:hover {
+                // color: var(--orange);
+              }
+
+              .doc-icon {
+                // line-height: var(--size1);
+                vertical-align: middle;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+*, *:before, *:after { box-sizing: inherit; }
