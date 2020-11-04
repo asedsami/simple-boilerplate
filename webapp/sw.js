@@ -1,5 +1,5 @@
 const {log} = console
-const cacheName = 'cacheNameTest-v0.2.9'
+const cacheName = 'cacheNameTest-v0.2.9.2'
 const staticAssets = [
 	'./',
 	'./index.html',
