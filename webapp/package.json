@@ -24,6 +24,8 @@
 		"@babel/preset-env": "^7.4.3",
 		"@babel/preset-react": "^7.10.4",
 		"babel-loader": "^8.0.5",
+		"babel-plugin-transform-class-properties": "^6.24.1",
+		"base-href-webpack-plugin": "^2.0.0",
 		"clean-webpack-plugin": "^2.0.1",
 		"css-loader": "^2.1.1",
 		"html-loader": "^0.5.5",

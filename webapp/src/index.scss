@@ -28,8 +28,10 @@
   --brown3: #CA9D73;
   --grey1: #64574A;
   --grey2: #958B81;
+  --main-green: #35BDB2;
   --background1: #F9F2EA;
   --background2: #EEFCFF;
+  --main-grey: #F7F7F7;
   --color1: #89431E;
   --color2: #00BCF1;
   --color3: #B3ECFC;
@@ -37,6 +39,35 @@
 
 html, body, #root {
   // height: 100%;
+}
+
+@mixin page {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  justify-content: center;
+  align-text: center;
+}
+
+@mixin grid-list {
+  display: grid;
+  grid-auto-rows: calc(var(--size8) + var(--size1));
+}
+
+@mixin grid-item {
+  display: grid;
+  padding-left: var(--size4);
+  line-height: calc(var(--size8) + var(--size1));
+  font-size: var(--size5);
+  width: 100%;
+  letter-spacing: 1px;
+  border-radius: 10% / 50%;
+  justify-content: left;
+}
+
+@mixin main-header {
+  text-align: center;
+  height: var(--size8);
+  line-height: var(--size8);
 }
 
 html {
@@ -49,6 +80,7 @@ html {
   // text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
   body {
     color: var(--black1);
+    background: var(--main-grey);
     // min-height: calc(100vh - 100px); // this comes from wes bos' code in css-grid course and I don't recall what is it.
     margin: 0px;
     /* background: white; */
@@ -59,49 +91,24 @@ html {
     }
 
     #root {
-      // min-height: 100%;
-      
-      .home {
-        background: var(--background2);
+      min-height: 100vh;
+
+      .home-page {
+        @include page;
         // min-height: 100%;
-        display: grid;
-        grid-template-rows: 1fr auto;
-        justify-content: center;
-        align-text: center;
 
         h1 {
-          color: var(--orange);
-          text-align: center;
-          height: var(--size8);
-          line-height: var(--size8);
+          color: var(--main-green);
+          border-radius: 35%;
+          @include main-header;
         }
 
-        .list {
-          display: grid;
-          // background: rgba(0, 0, 0, 0.1);
-          // min-height: 100%;
-          // grid-gap: var(--size1);
+        .files-list {
+          @include grid-list;
           width: var(--size13);
-          // max-width: var(--size13);
-          // grid-template-rows: var(--size10);
-          grid-auto-rows: calc(var(--size8) + var(--size1));
-          // grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-          // background: tomato;
-          // justify-items: end;
-          // align-items: center;
 
-          .list-item {
-            display: grid;
-            padding-left: var(--size4);
-            line-height: calc(var(--size8) + var(--size1));
-            font-size: var(--size5);
-            width: 100%;
-            letter-spacing: 1px;
-            // background: #BADA55;
-            // min-height: 50px;
-            border-radius: 10% / 50%;
-            justify-content: left;
-            // border-bottom: 1px solid #F1F3F4;
+          .file-item {
+            @include grid-item;
 
             &:hover {
               // background: #E8F0FE;
@@ -125,6 +132,25 @@ html {
               }
             }
           }
+        }
+      }
+
+      .file-page {
+        @include page;
+
+        h1 {
+          color: var(--color2);
+          @include main-header;
+        }
+
+        .file-snippets-list {
+          white-space: pre-wrap;
+          // @include grid-list;
+
+          // .file-snippet-item {
+            // @include grid-item;
+
+          // }
         }
       }
     }

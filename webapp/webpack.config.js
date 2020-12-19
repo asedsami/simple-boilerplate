@@ -7,6 +7,9 @@ const path = require('path')
 module.exports = {
   mode: 'development',
   devtool: 'eval-source-map',
+  devServer: {
+    historyApiFallback: { index: 'dist/index.html' }
+  },
   module: {
     rules: [
       {
