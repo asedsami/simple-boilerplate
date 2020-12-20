@@ -1,5 +1,5 @@
-# simple-boilerplate
-Simple Boilerplate for Express.js, React.js with HMR, Source Maps and Service Worker
+# simple-starter
+Simple Starter for Express.js, React.js with HMR, Source Maps and Service Worker
 
 ```
 cd /api
